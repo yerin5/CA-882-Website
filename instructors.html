@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+  <title>Instructors - CA-882</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+   <a class="logo" href="../home/index.html">
+    <img src="../photos/ca882_logo.png" alt="Site logo">
+    <span>CA-882</span>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="../home/index.html">HOME</a>
+      <a href="../about/about.html">ABOUT</a>
+      
+      <div class="dropdown">
+        <a class="dropbtn" href="../leadership/leadership.html">LEADERSHIP ▾</a>
+        <div class="dropdown-content">
+            <a href="../leadership/leadership.html">CHAIN OF COMMAND</a>
+            <a href="../leadership/instructors.html">INSTRUCTORS</a>
+          </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="dropbtn" href="../resources/resources.html">CADET RESOURCES ▾</a>
+        <div class="dropdown-content">
+            <a href="../resources/resources.html#chain-of-command">CHAIN OF COMMAND</a>
+            <a href="../resources/resources.html#operating-instructions">OPERATING INSTRUCTIONS</a>
+            <a href="../resources/resources.html#knowledge">KNOWLEDGE</a>
+          </div>
+    </div>
+
+      <div class="dropdown">
+    <a class="dropbtn" href="../teams/teams.html">TEAMS/PROGRAMS ▾</a>
+    <div class="dropdown-content">
+        <a href="../teams/team-dc.html">DRILL & CEREMONIES</a>
+        <a href="../teams/team-dc.html#color-guard" class="sub-item">Color Guard</a>
+        <a href="../teams/team-dc.html#honor-guard" class="sub-item">Honor Guard</a>
+        <a href="../teams/team-dc.html#drill-team" class="sub-item">Drill Team</a>
+        <a href="../teams/team-khas.html">KHAS</a>
+        <a href="../teams/team-mwr.html">MWR</a>
+        <a href="../teams/team-raiders.html">RAIDERS</a>
+        <a href="../teams/team-jlab.html">JLAB</a>
+        <a href="../teams/team-stlx.html">STELLARXPLORERS</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="content">
+  <h2>INSTRUCTORS</h2>
+  <br>
+  <br>
+  <br>
+  <p>
+    <section class="leadership photos">
+      <div class="leadership-photo-grid">
+        <div style="display: flex; flex-direction: column;">
+          <p style="text-align: center; font-weight: bold; margin-bottom: 5px;">SENIOR AEROSPACE SCIENCE INSTRUCTOR</p>
+          <div style="display: flex; gap: 20px;">
+            <div class="leadership-photo-container">
+              <div class="leadership-photo-box">SASI</div>
+              <div class="leadership-text">MSgt Maurice Mack</div>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <p style="text-align: center; font-weight: bold; margin-bottom: 5px;">AEROSPACE SCIENCE INSTRUCTOR</p>
+          <div style="display: flex; gap: 20px;">
+            <div class="leadership-photo-container">
+              <div class="leadership-photo-box">ASI</div>
+              <div class="leadership-text">TSgt Mariano Morua</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </p>
+</main>
+
+  <footer class="footer">
+    <div class="social-links">
+      <a href="https://www.instagram.com/cvhs_ca882/?hl=en" target="_blank"><img src="../photos/instagram.png" alt="Instagram"></a>
+      <a href="https://www.facebook.com/groups/387027644707326" target="_blank"><img src="../photos/facebook.png" alt="Facebook"></a>
+      <a href="https://www.youtube.com/channel/UCfBB1Q6qdsxpkiVSEontYBA" target="_blank"><img src="../photos/youtube.png" alt="YouTube"></a>
+      <a href="https://www.tiktok.com/@cvhs_ca882" target="_blank"><img src="../photos/tiktok.png" alt="TikTok"></a>
+      <a href="https://linktr.ee/cvhs_ca882" target="_blank"><img src="../photos/link.png" alt="LinkTree"></a>
+    </div>
+  </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+
+  // Close menu when window is resized to larger screen
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('active');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+    }
+  });
+</script>
+
+</body>
+</html>

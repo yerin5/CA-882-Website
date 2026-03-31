@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+  <title>Projects</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+   <a class="logo" href="../home/index.html">
+    <img src="../photos/ca882_logo.png" alt="Site logo">
+    <span>CA-882</span>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="../home/index.html">HOME</a>
+      <a href="../about/about.html">ABOUT</a>
+      
+      <div class="dropdown">
+        <a class="dropbtn" href="../leadership/leadership.html">LEADERSHIP ▾</a>
+        <div class="dropdown-content">
+            <a href="../leadership/leadership.html">CHAIN OF COMMAND</a>
+            <a href="../leadership/instructors.html">INSTRUCTORS</a>
+          </div>
+      </div>
+
+    <div class="dropdown">
+        <a class="dropbtn" href="../resources/resources.html">CADET RESOURCES ▾</a>
+        <div class="dropdown-content">
+            <a href="#chain-of-command">CHAIN OF COMMAND</a>
+            <a href="#operating-instructions">OPERATING INSTRUCTIONS</a>
+            <a href="#knowledge">KNOWLEDGE</a>
+          </div>
+    </div>
+
+      <div class="dropdown">
+    <a class="dropbtn" href="../teams/teams.html">TEAMS/PROGRAMS ▾</a>
+    <div class="dropdown-content">
+        <a href="../teams/team-dc.html">DRILL & CEREMONIES</a>
+        <a href="../teams/team-dc.html#color-guard" class="sub-item">Color Guard</a>
+        <a href="../teams/team-dc.html#honor-guard" class="sub-item">Honor Guard</a>
+        <a href="../teams/team-dc.html#drill-team" class="sub-item">Drill Team</a>
+        <a href="../teams/team-khas.html">KHAS</a>
+        <a href="../teams/team-mwr.html">MWR</a>
+        <a href="../teams/team-raiders.html">RAIDERS</a>
+        <a href="../teams/team-jlab.html">JLAB</a>
+        <a href="../teams/team-stlx.html">STELLARXPLORERS</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="content">
+  <h2>CADET RESOURCES</h2>
+  <br>
+  <p2>
+    Make sure to use your GUSD account to access
+  </p2>
+
+   <h3 id="chain-of-command">
+    CHAIN OF COMMAND
+  </h3>
+  <p2>
+    The Chain of Command is an official hierarchy of authority that
+     dictates who is in charge of whom and of whom permission must be asked.
+  </p2>
+  <iframe src="https://drive.google.com/file/d/13YkuVBStpFqJlbAdEXYDTI6x95ns3LW3/preview" width="100%" height="600" frameborder="0" allow="autoplay"></iframe>
+   
+  <h3 id="operating-instructions">
+    OPERATING INSTRUCTIONS
+  </h3>
+  <p2>
+    The Operating Instructions (OI) serves as a reference
+     to cadets for any questions they may have (promotion criteria, 
+     chain of command, class procedures, demerits) and sets the guidelines 
+     for how AFJROTC should function as a whole.
+  </p2>
+  <iframe src="https://drive.google.com/file/d/1W2OS8n8R34bpMOiV2drT8nZ71g8E6fSk/preview" width="100%" height="600" frameborder="0" allow="autoplay"></iframe>
+
+  <h3 id="knowledge">
+    KNOWLEDGE
+  </h3>
+  <p2>
+    Warrior Knowledge develops competent, ethical leaders by mastering
+     Air Force fundamentals like the core values of Integrity First, 
+     Service Before Self, and Excellence in All We Do. Along with customs, 
+     history, and essential practical skills. This training builds character,
+      sharpens critical thinking, and prepares cadets to lead and fight as
+       officers in the Air Force and Space Force, ensuring mission success 
+       and upholding the highest military standards.
+  </p2>
+  <iframe src="https://docs.google.com/document/d/1y283-C0tygsEN-d2_bqj93WRtel9KZgcubGUJlz5ReM/preview" width="100%" height="600" frameborder="0" allow="autoplay"></iframe>
+
+</main>
+
+<footer class="footer">
+    <div class="social-links">
+      <a href="https://www.instagram.com/cvhs_ca882/?hl=en" target="_blank"><img src="../photos/instagram.png" alt="Instagram"></a>
+      <a href="https://www.facebook.com/groups/387027644707326" target="_blank"><img src="../photos/facebook.png" alt="Facebook"></a>
+      <a href="https://www.youtube.com/channel/UCfBB1Q6qdsxpkiVSEontYBA" target="_blank"><img src="../photos/youtube.png" alt="YouTube"></a>
+      <a href="https://www.tiktok.com/@cvhs_ca882" target="_blank"><img src="../photos/tiktok.png" alt="TikTok"></a>
+      <a href="https://linktr.ee/cvhs_ca882" target="_blank"><img src="../photos/link.png" alt="LinkTree"></a>
+    </div>
+  </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+
+  // Close menu when window is resized to larger screen
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('active');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+    }
+  });
+</script>
+
+</body>
+</html>
